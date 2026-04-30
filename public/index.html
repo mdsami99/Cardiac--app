@@ -1,0 +1,64 @@
+<head>
+<title>Cardiac Assistant</title>
+<style>
+body {
+  font-family: Arial;
+  background: #0b1a2f;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+h1 {
+  color: #00d4ff;
+}
+button {
+  padding: 10px;
+  background: #00d4ff;
+  border: none;
+  color: black;
+  border-radius: 5px;
+}
+input {
+  padding: 10px;
+  margin: 10px;
+}
+</style>
+</head>
+
+<body>
+<h1>NEW VERSION</h1>
+<h1>Welcome to Cardiac Assistant</h1>
+
+<h2>Heart Rate Calculator</h2>
+
+<input type="number" id="rr" placeholder="RR interval (seconds)">
+<button onclick="calcHR()">Calculate</button>
+
+<p id="result"></p>
+
+<script>
+function calc300() {
+  var boxes = document.getElementById("boxes").value;
+  if (boxes <= 0) {
+    document.getElementById("res2").innerText = "Enter valid value";
+    return;
+  }
+  var hr = Math.round(300 / boxes);
+  document.getElementById("res2").innerText = "Heart Rate: " + hr + " bpm";
+}
+function calcHR() {
+  var rr = document.getElementById("rr").value;
+
+  if (rr == "" || rr <= 0) {
+    document.getElementById("result").innerText = "Enter valid value";
+    return;
+  }
+
+  var hr = Math.round(60 / rr);
+
+  document.getElementById("result").innerText = "Heart Rate: " + hr + " bpm";
+}
+</script>
+
+</body>
+</html>
